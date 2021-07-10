@@ -46,9 +46,7 @@ BuildRequires:  pkgconfig(Qt5Xml)
 BuildRequires:  pkgconfig(Qt5Positioning)
 BuildRequires:  pkgconfig(mlite5)
 BuildRequires:  pkgconfig(libmkcal-qt5)
-%if 0%{?calcore:1}
-BuildRequires:  pkgconfig(KF5CalendarCore)
-%endif
+BuildRequires:  (kcalcore-qt5-devel or kf5-calendarcore-devel)
 BuildRequires:  pkgconfig(libkcalcoren-qt5)
 BuildRequires:  pkgconfig(zlib)
 BuildRequires:  pkgconfig(mpris-qt5)
