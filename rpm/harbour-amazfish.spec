@@ -50,7 +50,7 @@ BuildRequires:  pkgconfig(Qt5Positioning)
 BuildRequires:  pkgconfig(mlite5)
 BuildRequires:  pkgconfig(libmkcal-qt5)
 %if "%{sailfishos_version}" == "4.1.0.24"
-BuildRequires:  pkgconfig(KF5CalendarCore)
+BuildRequires:  kf5-calendarcore-devel
 %endif
 BuildRequires:  pkgconfig(libkcalcoren-qt5)
 BuildRequires:  pkgconfig(zlib)
