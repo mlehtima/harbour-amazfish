@@ -21,6 +21,11 @@ Name:       harbour-amazfish
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 
+%if 0%{?_repository:1}
+%define sailfishos_version %(echo %{_repository} | awk -F _ '{print $2;}')
+%endif
+
+
 Summary:    Watch interface application
 Version:    2.0.1
 Release:    1
@@ -44,7 +49,9 @@ BuildRequires:  pkgconfig(Qt5Xml)
 BuildRequires:  pkgconfig(Qt5Positioning)
 BuildRequires:  pkgconfig(mlite5)
 BuildRequires:  pkgconfig(libmkcal-qt5)
-%{lua: if posix.access("/usr/include/KF5/KCalendarCore", "r") then print("BuildRequires: pkgconfig(KF5CalendarCore)") end}
+%if "%{sailfishos_version}" == "4.1.0.24"
+BuildRequires:  pkgconfig(KF5CalendarCore)
+%endif
 BuildRequires:  pkgconfig(libkcalcoren-qt5)
 BuildRequires:  pkgconfig(zlib)
 BuildRequires:  pkgconfig(mpris-qt5)
